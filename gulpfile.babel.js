@@ -2,7 +2,6 @@
  *
  **/
 
-import 'babel/register';
 import gulp from 'gulp';
 import pug from 'gulp-pug';
 import gls from  'gulp-live-server';

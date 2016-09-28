@@ -10,8 +10,10 @@ module.exports = function(config) {
 		
 		files: [
 			'node_modules/angular/angular.js',
+			'node_modules/angular/angular-route.js',
+			'node_modules/angular/angular-sanitize.js',
 			'node_modules/angular-mocks/angular-mocks.js',
-			'dist/assets/scripts/*.js',
+			'dist/assets/scripts/app.js',
 			'test/**/*.js'
 		],
 		
