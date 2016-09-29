@@ -3,9 +3,9 @@
  **/
 
 import angular from 'angular';
-import {MainAppComponent} from './main-app.component';
-import {RepoFindComponent} from './repo-find.component';
-import {GitHubService} from './github.service';
+import {MainAppComponent} from './MainApp.Component';
+import {RepoFindComponent} from './RepoFind.Component';
+import {GitHubService} from './Github.Service';
 
 angular.module('appGithub.core', [])
 	.constant('apiPath', 'https://api.github.com')

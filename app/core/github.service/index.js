@@ -21,12 +21,12 @@ class GitHubService {
 					return {
 						id: item.id,
 						name: item.name,
-						fullName: item.full_name,
+						full_name: item.full_name,
 						description: item.description,
-						issues: item.open_issues
+						open_issues: item.open_issues
 					}
 				});
-				
+
 				return data;
 			});
 	}

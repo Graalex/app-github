@@ -2,7 +2,7 @@
  *
  **/
 
-import tmpl from './main-app.tmpl.jade';
+import tmpl from './MainApp.jade';
 
 let MainAppComponent = {
 	template: tmpl()

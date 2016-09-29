@@ -5,52 +5,55 @@
 module.exports = function(config) {
 	config.set({
 		basePath: __dirname,
-		
+
 		frameworks: ['jasmine'],
-		
+
 		files: [
 			'node_modules/angular/angular.js',
-			'node_modules/angular/angular-route.js',
-			'node_modules/angular/angular-sanitize.js',
+			'node_modules/angular-route/angular-route.js',
+			'node_modules/angular-sanitize/angular-sanitize.js',
 			'node_modules/angular-mocks/angular-mocks.js',
+			'dist/assets/scripts/vendor.js',
 			'dist/assets/scripts/app.js',
-			'test/**/*.js'
+			'test/test-all.js'
 		],
-		
+
 		exclude: [
 		],
-		
+
 		preprocessors: {
-			'test/**/*.js': ['babel']
+			'test/test-all.js': ['webpack']
 		},
-		
-		babelPreprocessor: {
-			options: {
-				presets: ['es2015'],
-				sourceMap: 'inline'
+
+		webpack: {
+			module: {
+				loaders: [
+					{
+						test: /\.js$/,
+						exclude: /node_modules/,
+						loader: 'babel'
+					}
+				]
 			},
-			filename: function (file) {
-				return file.originalPath.replace(/\.js$/, '.es5.js');
-			},
-			sourceFileName: function (file) {
-				return file.originalPath;
-			}
+			watch: true
 		},
-		
+
+		webpackMiddleware: {
+			noInfo: true
+		},
+
 		reporters: ['progress'],
-		
+
 		port: 9876,
-		
+
 		colors: true,
 		
-		logLevel: config.DEBUG,
-		
 		autoWatch: true,
-		
-		browsers: ['Firefox'],
-		
+
+		browsers: ['PhantomJS'],
+
 		singleRun: false,
-		
+
 		concurrency: Infinity
 	})
 }

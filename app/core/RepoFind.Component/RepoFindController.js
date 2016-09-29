@@ -3,10 +3,10 @@
  **/
 
 class RepoFindController {
-	constructor(githubService, $location, $log) {
+	constructor(githubService, $log) {
 		'ngInject';
 		this.ghService = githubService;
-		this.location = $location;
+		//this.location = $location;
 		this.log = $log;
 
 		this.userName = '';
@@ -34,7 +34,7 @@ class RepoFindController {
 
 	select() {
 		let self = this;
-		
+
 		if(self.repos.some(item => item.name === self.repoName)) {
 			self.log.debug(self.repoName);
 			// self.location.path(`/${this.userName}/${this.repoName}/issues`);
