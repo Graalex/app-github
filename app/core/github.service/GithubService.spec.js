@@ -2,7 +2,7 @@
  *
  **/
 
-import {reposMock} from './GithubService.mock.js';
+import {reposMock, issuesMock} from './GithubService.mock.js';
 
 describe('githubService test:', () => {
 	let httpBackend;
@@ -23,7 +23,7 @@ describe('githubService test:', () => {
 		expect(githubService).toBeDefined();
 	});
 
-	it('get a list of repositories', () => {
+	it('should get a list of repositories', () => {
 		httpBackend.expectGET('https://api.github.com/users/test-user/repos')
 			.respond(200, reposMock);
 		githubService.getRepos('test-user')
@@ -31,6 +31,17 @@ describe('githubService test:', () => {
 				expect(res).toEqual(reposMock);
 			});
 
+		httpBackend.flush();
+	});
+
+	it('should get a list of requests for the repository', () => {
+		httpBackend.expectGET('https://api.github.com/repos/test-user/test-repos/issues')
+			.respond(200, issuesMock);
+		githubService.getIssues('test-user', 'test-repos')
+			.then(res => {
+				expect(res).toEqual(issuesMock);
+			});
+		
 		httpBackend.flush();
 	});
 });

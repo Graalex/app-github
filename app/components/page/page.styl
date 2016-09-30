@@ -1,8 +1,4 @@
-/**
-*
-**/
-
-main-app
+.page
 	display flex
 	flex-direction column
 	justify-content space-between
@@ -10,7 +6,7 @@ main-app
 	width 1460px
 	margin 0 auto
 
-.b-header
+.page-header
 	height 70px
 	line-height 70px
 	background #b0bec5
@@ -19,23 +15,23 @@ main-app
 		margin 0
 		text-align center
 
-.b-nav
-	position fixed
-	width 400px
+.page-main
+	display flex
+	flex-direction row
+	justify-content space-between
+	flex 1 0 auto
+
+.page-search
+	width 300px
 	height 100%
 	overflow hidden
 	background #90a4ae
 
-	/*
-	&:hover
-		width 300px
-	*/
-
-.b-content
+.page-content
 	flex 1 0 auto
 	background #fafafa
 
-.b-footer
+.page-footer
 	height 70px
 	line-height 70px
 	background #b0bec5

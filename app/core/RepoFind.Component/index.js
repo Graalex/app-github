@@ -2,8 +2,8 @@
  *
  **/
 
-import {RepoFindController} from './RepoFindController.js';
-import tmpl from './RepoFind.jade';
+import {RepoFindController} from './repoFindController.js';
+import tmpl from './repoFind.jade';
 
 let RepoFindComponent = {
 	template: tmpl(),

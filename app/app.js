@@ -1,11 +1,21 @@
 /**
+ * @ngdoc
+ * @name ghApp module
  *
+ * @description
+ * Корневой модуль приложения
  **/
 
 import angular from 'angular';
-import 'angular-route';
-import 'angular-sanitize';
-import 'ng-showdown';
-import './core';
+import Router from 'angular-route';
+import Sanitize from  'angular-sanitize';
+import Markdown from 'ng-showdown';
 
-angular.module('appGithub', ['appGithub.core']);
+import Components from './components';
+
+angular.module('ghApp', [
+	Components,
+	Router,
+	Sanitize
+]);
+
