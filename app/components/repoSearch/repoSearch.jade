@@ -1,0 +1,20 @@
+form.repo-search
+	label.repo-search__label(for='user') Пользователь:
+	input#user.repo-search__input(
+	type='text',
+	ng-model='$ctrl.userName',
+	ng-model-options="{updateOn: 'blur change mousedown'}",
+	ng-change='$ctrl.downloadRepos()',
+	placeholder='Имя пользователя'
+	)
+	label.repo-search__label(for='repo') Репозитарий:
+	input#repo.repo-search__input(
+	type='text',
+	ng-model='$ctrl.repoName',
+	ng-change='$ctrl.changeRepo()',
+	list='repo-list',
+	placeholder='{{ $ctrl.placRepo }}'
+	)
+	datalist#repo-list
+		option(ng-repeat='repo in $ctrl.repos', value='{{ repo.name }}')
+

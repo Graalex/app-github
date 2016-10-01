@@ -1,17 +1,19 @@
 /**
- *  @ngdoc
- *  @name ghApp.components module
+ *  @ngdoc  module
+ *  @name ghApp.components
  *
  *  @description
  *  В модуле определены компоненты приложения
  **/
 
 import angular from 'angular';
-import Page from './page';
+import AppMain from './appMain';
+import RepoSearch from './repoSearch';
 
 const components = angular
 	.module('ghApp.components', [
-		Page
+		AppMain,
+		RepoSearch
 	])
 	.name;
 

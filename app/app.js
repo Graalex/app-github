@@ -1,6 +1,6 @@
 /**
- * @ngdoc
- * @name ghApp module
+ * @ngdoc module
+ * @name ghApp
  *
  * @description
  * Корневой модуль приложения

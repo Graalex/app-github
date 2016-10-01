@@ -3,7 +3,7 @@
 		h1.page-header__title Обращения для репозитариев GitHub
 	.page-main
 		aside.page-search
-			repo-search
+			repo-search(select-repo='$ctrl.repoSelect($event)')
 		main.page-content(ng-view)
 	footer.page-footer
 		.page-footer__summary Тестовое задание соискателя на должность программист JavaScript.
