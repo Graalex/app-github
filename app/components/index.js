@@ -10,12 +10,14 @@ import angular from 'angular';
 import AppMain from './appMain';
 import RepoSearch from './repoSearch';
 import IssuesList from './issuesList';
+import IssueItem from './issueItem';
 
 const components = angular
 	.module('ghApp.components', [
 		AppMain,
 		RepoSearch,
-		IssuesList
+		IssuesList,
+		IssueItem
 	])
 	.name;
 
