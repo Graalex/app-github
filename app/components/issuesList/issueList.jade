@@ -1,0 +1,7 @@
+section.issues-list
+	header.issues-list-header
+		h2.issues-list-header__title Репозитарий {{ $ctrl.userName }}/{{ $ctrl.repoName }}
+	ul.issues-list-items
+		li.issues-list-items__item(ng-repeat='issue in $ctrl.issues')
+			issue-item(issue='issue')
+	footer.issues-list-footer

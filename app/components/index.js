@@ -9,11 +9,13 @@
 import angular from 'angular';
 import AppMain from './appMain';
 import RepoSearch from './repoSearch';
+import IssuesList from './issuesList';
 
 const components = angular
 	.module('ghApp.components', [
 		AppMain,
-		RepoSearch
+		RepoSearch,
+		IssuesList
 	])
 	.name;
 
