@@ -11,7 +11,7 @@ import tmpl from './issueItem.jade';
 const IssueItemComponent = {
 	template: tmpl(),
 	bindings: {
-		issue: '<'
+		issue: '<',
 	}
 };
 

@@ -15,10 +15,10 @@ class AppMainService {
 		this.http = $http;
 		this.path = apiPath;
 	}
-	
+
 	getRepos(userName) {
 		let self = this;
-		
+
 		return self.http({
 			url: `${self.path}/users/${userName}/repos`,
 			method: 'GET',
@@ -28,12 +28,25 @@ class AppMainService {
 				return res.data;
 			});
 	}
-	
+
 	getIssues(userName, repoName) {
 		let self = this;
-		
+
 		return self.http({
 			url: `${self.path}/repos/${userName}/${repoName}/issues`,
+			method: 'GET',
+			cache: true
+		})
+			.then(res => {
+				return res.data;
+			});
+	}
+
+	getIssue(userName, repoName, issueNumber) {
+		let self = this;
+
+		return self.http({
+			url: `${self.path}/repos/${userName}/${repoName}/issues/${issueNumber}`,
 			method: 'GET',
 			cache: true
 		})

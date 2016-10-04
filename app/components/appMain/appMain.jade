@@ -1,6 +1,6 @@
 .page
 	header.page-header
-		h1.page-header__title Обращения для репозитариев GitHub
+		h1.page-header__title Обращения для репозитария: {{ $ctrl.fullName }}
 	.page-main
 		aside.page-search
 			repo-search(select-repo='$ctrl.repoSelect($event)')

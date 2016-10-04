@@ -1,7 +1,7 @@
 section.issue-item
 	header.issue-item-header
 		span.issue-item-header__status(ng-class="{'issue-item-header__status--opened': $ctrl.issue.state === 'open', 'issue-item-header__status--closed': $ctrl.issue.state === 'close'}")
-		h3.issue-item-header__title {{ $ctrl.issue.number }}. {{ $ctrl.issue.title }}
+		h3.issue-item-header__title №{{ $ctrl.issue.number }} {{ $ctrl.issue.title }}
 	.issue-item-owner
 		span.issue-item-owner__avatar
 			img.issue-item-owner__img(ng-src='{{ $ctrl.issue.user.avatar_url }}', alt='{{ $ctrl.issue.user.login }}')
@@ -12,4 +12,4 @@ section.issue-item
 			time(datetime='{{ $ctrl.issue.created_at }}') Создан: {{ $ctrl.issue.created_at | date: 'dd.MM.yyyy' }}
 		span.issue-item-footer__closed
 			time(datetime='{{ $ctrl.issue.closed_at }}', ng-if="$ctrl.issue.state === 'close'") Закрыт: {{ $ctrl.issue.closed_at | date: 'dd.MM.yyyy' }}
-		a.issue-item-footer__more(ng-href='/issues/{{ $ctrl.isuue.number }}') Подробнее ...
+		a.issue-item-footer__more(ng-href='/issues/{{ $ctrl.issue.number }}') Подробнее ...
