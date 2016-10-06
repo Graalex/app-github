@@ -14,7 +14,8 @@ const RepoSearchComponent = {
 	controller: RepoSearchController,
 	template: tmpl(),
 	bindings: {
-		selectRepo: '&'
+		selectRepo: '&',
+		expanded: '&'
 	}
 };
 

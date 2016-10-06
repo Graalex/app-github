@@ -15,7 +15,7 @@ class AppMainController {
 		this.repoName = '';
 		this.fullName = '';
 		this.issues = null;
-		this.selectIssue = null;
+		this.expanded = false;
 	}
 
 	repoSelect(data) {
@@ -29,10 +29,19 @@ class AppMainController {
 		self.service.getIssues(self.userName, self.repoName)
 			.then(res => {
 				self.issues = res;
+				if(res.length > 0) {
+					self.expanded = false;
+				}
 			})
 			.catch(err => {
 				self.log.error(err);
 			});
+	}
+	
+	toggleExpand(data) {
+		if(data) {
+			this.expanded = data.expanded;
+		}
 	}
 }
 

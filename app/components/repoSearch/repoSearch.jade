@@ -1,20 +1,23 @@
-form.repo-search
-	label.repo-search__label(for='user') Пользователь:
-	input#user.repo-search__input(
-	type='text',
-	ng-model='$ctrl.userName',
-	ng-model-options="{updateOn: 'blur change mousedown'}",
-	ng-change='$ctrl.downloadRepos()',
-	placeholder='Имя пользователя'
-	)
-	label.repo-search__label(for='repo') Репозитарий:
-	input#repo.repo-search__input(
-	type='text',
-	ng-model='$ctrl.repoName',
-	ng-change='$ctrl.changeRepo()',
-	list='repo-list',
-	placeholder='{{ $ctrl.placRepo }}'
-	)
+.repo-search
+	.repo-search-toolbar(ng-click='$ctrl.toggleExpand()')
+		img.repo-search-toolbar__button(ng-src='/assets/icons/line.png')
+	form.repo-search-form
+		label.repo-search-form__label(for='user') Пользователь:
+		input#user.repo-search-form__input(
+			type='text',
+			ng-model='$ctrl.userName',
+			ng-model-options="{updateOn: 'blur change mousedown'}",
+			ng-change='$ctrl.downloadRepos()',
+			placeholder='Имя пользователя'
+		)
+		label.repo-search-form__label(for='repo') Репозитарий:
+		input#repo.repo-search-form__input(
+			type='text',
+			ng-model='$ctrl.repoName',
+			ng-change='$ctrl.changeRepo()',
+			list='repo-list',
+			placeholder='{{ $ctrl.placRepo }}'
+		)
 	datalist#repo-list
 		option(ng-repeat='repo in $ctrl.repos', value='{{ repo.name }}')
 

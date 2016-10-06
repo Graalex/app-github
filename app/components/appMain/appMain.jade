@@ -1,9 +1,11 @@
 .page
 	header.page-header
+		.page-header__logo
+			img.page-header__img(src='/assets/icons/github-logo.png', alt='GitHub Issues')
 		h1.page-header__title Обращения для репозитария: {{ $ctrl.fullName }}
 	.page-main
-		aside.page-search
-			repo-search(select-repo='$ctrl.repoSelect($event)')
-		main.page-content(ng-view)
+		aside.page-search(ng-click='$ctrl.toggleExpand()', ng-class="{'page-search--expanded': $ctrl.expanded}")
+			repo-search(select-repo='$ctrl.repoSelect($event)', expanded='$ctrl.toggleExpand($event)')
+		main.page-content(ng-view, ng-click='$ctrl.expanded = false')
 	footer.page-footer
 		.page-footer__summary Тестовое задание соискателя на должность программист JavaScript.

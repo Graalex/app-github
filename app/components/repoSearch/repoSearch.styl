@@ -1,18 +1,33 @@
 .repo-search
 	display flex
-	flex-direction column
-	max-width 300px
-	width 90%
-	padding .5em;
+	justify-content flex-start
+	align-items stretch
+	height 100%
 
-	&__label
-		display block
-		margin-top 1em
-		margin-bottom .5em
-		font-weight 700
+	&-toolbar
+		min-width 30px
+		padding 5px
+		background #9e9e9e
 
-	&__input
-		display block
-		width 250px
-		height 1.5em
-		padding-left .5em
+		&__button
+			width 100%
+			cursor pointer
+
+	&-form
+		display flex
+		flex-direction column
+		max-width 400px
+		// width 90%
+		padding .5em;
+
+		&__label
+			display block
+			margin-top 1em
+			margin-bottom .5em
+			font-weight 700
+
+		&__input
+			display block
+			width 250px
+			height 1.5em
+			padding-left .5em

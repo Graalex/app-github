@@ -19,6 +19,7 @@ class RepoSearchController {
 		this.repoName = '';
 		this.repos = [];
 		this.placRepo = 'Название репозитария';
+		this.expand = false;
 	}
 
 	downloadRepos() {
@@ -47,6 +48,15 @@ class RepoSearchController {
 				}
 			});
 		}
+	}
+	
+	toggleExpand() {
+		this.expand = !this.expand;
+		this.expanded({
+			$event: {
+				expanded: this.expand
+			}
+		});
 	}
 }
 
